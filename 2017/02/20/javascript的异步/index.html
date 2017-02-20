@@ -16,16 +16,16 @@
     
     
 
-    <meta name="description" content="javascript的异步今天在网上看见一个题求    for (var i = 0; i &amp;lt; 10; ++i) {        setTimeout(function () {console.log(i)}, 0);    }得打印结果。答案是10，10，10，…,10。10个10。然后我百度了关于javascript的异步的知识看了阮一峰的博客Javascript异步编程的4种方法 发">
+    <meta name="description" content="javascript的异步今天在网上看见一个题求    for (var i = 0; i &amp;lt; 10; ++i) {    setTimeout(function () {console.log(i)}, 0);    }得打印结果。答案是10，10，10，…,10。10个10。然后我百度了关于javascript的异步的知识看了阮一峰的博客Javascript异步编程的4种方法 发现这不是">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript的异步 | HORIZON">
 <meta property="og:url" content="http://yoursite.com/2017/02/20/javascript的异步/index.html">
 <meta property="og:site_name" content="HORIZON">
-<meta property="og:description" content="javascript的异步今天在网上看见一个题求    for (var i = 0; i &amp;lt; 10; ++i) {        setTimeout(function () {console.log(i)}, 0);    }得打印结果。答案是10，10，10，…,10。10个10。然后我百度了关于javascript的异步的知识看了阮一峰的博客Javascript异步编程的4种方法 发">
-<meta property="og:updated_time" content="2017-02-20T14:29:30.519Z">
+<meta property="og:description" content="javascript的异步今天在网上看见一个题求    for (var i = 0; i &amp;lt; 10; ++i) {    setTimeout(function () {console.log(i)}, 0);    }得打印结果。答案是10，10，10，…,10。10个10。然后我百度了关于javascript的异步的知识看了阮一峰的博客Javascript异步编程的4种方法 发现这不是">
+<meta property="og:updated_time" content="2017-02-20T14:38:52.972Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript的异步 | HORIZON">
-<meta name="twitter:description" content="javascript的异步今天在网上看见一个题求    for (var i = 0; i &amp;lt; 10; ++i) {        setTimeout(function () {console.log(i)}, 0);    }得打印结果。答案是10，10，10，…,10。10个10。然后我百度了关于javascript的异步的知识看了阮一峰的博客Javascript异步编程的4种方法 发">
+<meta name="twitter:description" content="javascript的异步今天在网上看见一个题求    for (var i = 0; i &amp;lt; 10; ++i) {    setTimeout(function () {console.log(i)}, 0);    }得打印结果。答案是10，10，10，…,10。10个10。然后我百度了关于javascript的异步的知识看了阮一峰的博客Javascript异步编程的4种方法 发现这不是">
     
     
     
@@ -180,7 +180,7 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <h4 id="javascript的异步"><a href="#javascript的异步" class="headerlink" title="javascript的异步"></a>javascript的异步</h4><p>今天在网上看见一个题<br>求<br>    for (var i = 0; i &lt; 10; ++i) {<br>        setTimeout(function () {console.log(i)}, 0);<br>    }<br>得打印结果。答案是10，10，10，…,10。10个10。然后我百度了关于javascript的异步的知识看了阮一峰的博客<a href="http://www.ruanyifeng.com/blog/2012/12/asynchronous%EF%BC%BFjavascript.html" target="_blank" rel="external">Javascript异步编程的4种方法</a> 发现这不是其中任何一种异步编程方法啊<br>最后才了解到setInerval,setTimeout里面的函数本来就是回调函数。更详细请参考<a href="http://blog.csdn.net/u013063153/article/details/52457307" target="_blank" rel="external">深入理解JavaScript编程中的同步与异步机制</a>。</p>
+    <h4 id="javascript的异步"><a href="#javascript的异步" class="headerlink" title="javascript的异步"></a>javascript的异步</h4><p>今天在网上看见一个题<br>求<br>    for (var i = 0; i &lt; 10; ++i) {<br>    setTimeout(function () {console.log(i)}, 0);<br>    }<br>得打印结果。答案是10，10，10，…,10。10个10。然后我百度了关于javascript的异步的知识看了阮一峰的博客<a href="http://www.ruanyifeng.com/blog/2012/12/asynchronous%EF%BC%BFjavascript.html" target="_blank" rel="external">Javascript异步编程的4种方法</a> 发现这不是其中任何一种异步编程方法啊<br>最后又看了<a href="http://blog.csdn.net/u013063153/article/details/52457307" target="_blank" rel="external">深入理解JavaScript编程中的同步与异步机制</a>。才发现setInterval,setTimeout,里面的函数本身<br>就是回调函数，当异步函数执行时，回调函数会被压入一个队列。JavaScript引擎直到异步函数执行完成后，才会开始处理事件循环。所以说上面的函数每循环一次都是往4队列里面压入一个待执行函数，而循环执行完后才会，，执行压入的10个函数，而此时i已经等于10。</p>
 
   </section>
 
