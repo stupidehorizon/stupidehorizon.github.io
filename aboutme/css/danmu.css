@@ -1,0 +1,37 @@
+*{ 
+
+  margin:0;
+  padding:0;
+}
+.danmu{
+  margin:20px;
+  height:350px;
+  border:1px solid #8c8080;
+  border-radius:5px;
+  overflow:hidden;
+}
+.input-area{
+  width:300px;
+  margin: 20px auto;
+  text-align:center;
+}
+.input-con{
+  width:300px;
+  height:30px;
+  border-radius:5px;
+  border:1px solid #8c8080;
+  padding-left:8px;
+}
+.btn{
+  width:120px;
+  height:30px;
+  margin:10px 5px;
+  border-radius:3px;
+  background-color:white;
+  border:1px solid #8c8080;
+}
+
+.danmu div{
+  font-size:30px;
+  position:absolute;
+}
