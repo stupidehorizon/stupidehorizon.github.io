@@ -7,7 +7,7 @@
     
 
     <title>
-      标签: javascript 
+      在hexo中创建无依赖的页面 | HORIZON 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -16,12 +16,19 @@
     
     
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="标签: javascript">
-<meta property="og:url" content="http://yoursite.com/tags/javascript/index.html">
+    <meta name="description" content="前一段时间我总是被这样一个问题困扰，我在github的展示页中传的个人页面总是被hexo覆盖掉，而且我把文件放在hexo中页面又总是被hexo生成博客的侧边栏。一方面我不想放弃hexo这个十分便利的个人博客，另一方面我又不得  不有个人的简历页面。所以我尝试每次hexo d后,再pull远程库，放入个人页面文件commit后再Push十分麻烦，。好在我今天终于解决了这个问题。
+只要在html页面首">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在hexo中创建无依赖的页面 | HORIZON">
+<meta property="og:url" content="http://yoursite.com/2017/03/11/关于如何在hexo中创建无依赖的页面/index.html">
 <meta property="og:site_name" content="HORIZON">
+<meta property="og:description" content="前一段时间我总是被这样一个问题困扰，我在github的展示页中传的个人页面总是被hexo覆盖掉，而且我把文件放在hexo中页面又总是被hexo生成博客的侧边栏。一方面我不想放弃hexo这个十分便利的个人博客，另一方面我又不得  不有个人的简历页面。所以我尝试每次hexo d后,再pull远程库，放入个人页面文件commit后再Push十分麻烦，。好在我今天终于解决了这个问题。
+只要在html页面首">
+<meta property="og:updated_time" content="2017-03-11T14:17:35.482Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="标签: javascript">
+<meta name="twitter:title" content="在hexo中创建无依赖的页面 | HORIZON">
+<meta name="twitter:description" content="前一段时间我总是被这样一个问题困扰，我在github的展示页中传的个人页面总是被hexo覆盖掉，而且我把文件放在hexo中页面又总是被hexo生成博客的侧边栏。一方面我不想放弃hexo这个十分便利的个人博客，另一方面我又不得  不有个人的简历页面。所以我尝试每次hexo d后,再pull远程库，放入个人页面文件commit后再Push十分麻烦，。好在我今天终于解决了这个问题。
+只要在html页面首">
     
     
     
@@ -146,47 +153,51 @@ classes that you can use:
         <div class="content-wrapper__inner entry">
             
 
+<article class="post-container post-container--single">
 
-  <h1 class="archive-title">标签: javascript</h1>
-  <hr class="post-list__divider" />
-
-
-<div class="main-post-list">
-    <ol class="post-list">
+  <header class="post-header">
     
-    
-    <li>
+    <h1 class="post-title">在hexo中创建无依赖的页面</h1>
 
-      <h2 class="post-list__post-title post-title">
-        <a href="/2017/02/20/javascript的异步/" title="link to javascript的异步">javascript的异步</a>
-      </h2>
-
-      <div class="post-list__meta">
-
-        <time datetime="2017-02-20" class="post-list__meta--date date">2017-02-20</time> 
-      </div>
-
-      <div class="excerpt">
-        
-      </div>
-
-      <hr class="post-list__divider" />
-    </li>
-    
-  </ol>
-
-  <hr class="post-list__divider " />
-
-<nav class="pagination" role="navigation">
     
 
-    <span class="pagination__page-number"> 1 / 1</span>
+    <div class="post-meta">
+      <time datetime="2017-03-11" class="post-meta__date date">2017-03-11</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/hexo/">hexo</a>
+            </font>
+          
+
+      </span>
+    </div>
     
     
-</nav>
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>前一段时间我总是被这样一个问题困扰，我在github的展示页中传的个人页面总是被hexo覆盖掉，而且我把文件放在hexo中页面又总是被hexo生成博客的侧边栏。一方面我不想放弃hexo这个十分便利的个人博客，另一方面我又不得  不有个人的简历页面。所以我尝试每次hexo d后,再pull远程库，放入个人页面文件commit后再Push十分麻烦，。好在我今天终于解决了这个问题。</p>
+<h4 id="只要在html页面首部加上"><a href="#只要在html页面首部加上" class="headerlink" title="只要在html页面首部加上"></a>只要在html页面首部加上</h4><pre><code>---   
+    layout: false
+    title: &quot;关于我&quot;
+    date: 2017-03-11 20:03:48
+--- 
+</code></pre><p>页面就不会被hexo加上博客的模板，亲测有效。以后终于又能愉快的写博客了。</p>
+
+  </section>
+
+  
+  
+</article>
 
 
-</div>
             <footer class="footer">
 
     <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
@@ -214,6 +225,18 @@ classes that you can use:
 
 
     
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
     
     
     <!--kill ie6 -->
