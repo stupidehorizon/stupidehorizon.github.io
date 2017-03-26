@@ -28,7 +28,7 @@
 2、在系统 高级设置 环境变量path中添加已安装MongoDB的bin文件路径比如我添加的是 D:\MongoDB\Server\3.4\bin
 3、在任意盘下新建数据库存放文件夹比如我在D盘下创建了MongoDB-data文件，并在里面创建了data文件，然后再在data里面创建了db文件
 4、现在正式开始启动数据库首">
-<meta property="og:updated_time" content="2017-03-17T14:40:21.371Z">
+<meta property="og:updated_time" content="2017-03-18T13:23:48.909Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一分钟快速起一个MongoDB数据库 | HORIZON">
 <meta name="twitter:description" content="1、数据库安装此处不多说直接百度官网找到对应自己电脑的版本下载傻瓜式安装。
@@ -215,11 +215,30 @@ classes that you can use:
 <li>在MongoDB shell中使用 load()加载js文件。<pre><code>&gt;load(&quot;name.js&quot;)  
 </code></pre></li>
 </ul>
-<h3 id="7、管理用户账户"><a href="#7、管理用户账户" class="headerlink" title="7、管理用户账户"></a>7、管理用户账户</h3><p>MongoDB能正常运行后，首先应该想到的事是添加用户，接下来我们讨论如何使用MongoDB shell来管理用户账户。</p>
+<h3 id="7、添加账户"><a href="#7、添加账户" class="headerlink" title="7、添加账户"></a>7、添加账户</h3><p>MongoDB能正常运行后，首先应该想到的事是添加用户，接下来我们讨论如何使用MongoDB shell来管理用户账户。</p>
 <blockquote>
-<p>要创建用户账户，首先切换到目标数据库，再使用addUser()创建用户账户。<br>use local<br>db.adduser({<br>    user:”testUser”,<br>    pwd:”test”,<br>    roles:[“readWrite”,”dbAdmin”]<br>})</p>
+<p>要创建用户账户，首先切换到目标数据库，再使用createUser()创建用户账户。<br>管理用户账户<br>use admin<br> db.createUser({user:”useradmin”,pwd:”test”,roles:[“userAdminAnyDatabase”]})</p>
 </blockquote>
-<p>…待续</p>
+<p> 管理数据库账户<br>db.createUser({user:”dbadmin”,pwd:”test”,roles:[“readWriteAnyDatabase”,”dbAdminAnyDatabase”,”clusterAdmin”]})</p>
+<h3 id="8、管理数据库和集合"><a href="#8、管理数据库和集合" class="headerlink" title="8、管理数据库和集合"></a>8、管理数据库和集合</h3><p>连接，数据库和集合是最重要的MongoDB服务器组件。</p>
+<h4 id="创建一个新的数据库"><a href="#创建一个新的数据库" class="headerlink" title="创建一个新的数据库"></a>创建一个新的数据库</h4><p>首先确保登录了数据库管理账号</p>
+<blockquote>
+<p>use newDB<br>db.createCollection(“newCollection”)  //创建集合后数据库才生效<br>show dbs<br>admin  0.000GB<br>local  0.000GB<br>newDB  0.000GB</p>
+</blockquote>
+<h4 id="删除一个数据库"><a href="#删除一个数据库" class="headerlink" title="删除一个数据库"></a>删除一个数据库</h4><p>switched to db newDB</p>
+<blockquote>
+<p>db.dropDatabase()<br>{ “dropped” : “newDB”, “ok” : 1 }<br>show dbs<br>admin  0.000GB<br>local  0.000GB</p>
+</blockquote>
+<h4 id="获取数据库统计信息"><a href="#获取数据库统计信息" class="headerlink" title="获取数据库统计信息"></a>获取数据库统计信息</h4><blockquote>
+<p>db.stats()<br>{<br>        “db” : “admin”,<br>        “collections” : 2,<br>        “views” : 0,<br>        “objects” : 4,<br>        “avgObjSize” : 203,<br>        “dataSize” : 812,<br>        “storageSize” : 69632,<br>        “numExtents” : 0,<br>        “indexes” : 3,<br>        “indexSize” : 102400,<br>        “ok” : 1<br>}</p>
+</blockquote>
+<h4 id="查看集合"><a href="#查看集合" class="headerlink" title="查看集合"></a>查看集合</h4><blockquote>
+<p>show collections<br>system.users<br>system.version</p>
+</blockquote>
+<h4 id="创建与删除集合"><a href="#创建与删除集合" class="headerlink" title="创建与删除集合"></a>创建与删除集合</h4><blockquote>
+<p>show collections<br>system.users<br>system.version<br>db.createCollection(“newCollection”)<br>{ “ok” : 1 }<br>show collections<br>newCollection<br>system.users<br>system.version<br>db.newCollection.drop()<br>true<br>show collections<br>system.users<br>system.version</p>
+</blockquote>
+<h4 id="关于在集合中插入数据和查询数据"><a href="#关于在集合中插入数据和查询数据" class="headerlink" title="关于在集合中插入数据和查询数据"></a>关于在集合中插入数据和查询数据</h4><p>请查看官方文档<br><a href="http://docs.mongoing.com/manual-zh/tutorial/insert-documents.html" target="_blank" rel="external">http://docs.mongoing.com/manual-zh/tutorial/insert-documents.html</a></p>
 
   </section>
 
