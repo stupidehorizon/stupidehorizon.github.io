@@ -1,9 +1,9 @@
 html{
-	height:100%;
+	height:auto;
 	width: 100%;
 }
 body{
-	height:100%;
+	
 	background-color:#202020 !important;
 	width:100%;
 }
@@ -23,8 +23,10 @@ body{
 	border:8px solid white;
 	border-radius: 3px;
 	margin-bottom: 50px;
+}
 
-
+.container,.raw{
+	height: 100%;
 }
 .photo img{
 	height:160px;
@@ -49,8 +51,7 @@ body{
 }
 
 .progress-div{
-	margin: 10px auto;
-	margin:0 10% 0 10%;
+	margin:20px 15% 0 15%;
 }
 .white{
 	color: white;	
@@ -102,5 +103,6 @@ body{
 	color: #416c97;
 }
 .col-lg-4{
-	padding-bottom: 137px;
+	padding-bottom: 10px;
+	height: 1293px;
 }

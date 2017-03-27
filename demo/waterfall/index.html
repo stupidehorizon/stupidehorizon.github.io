@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf8">
+    <meta http-equiv="X-UA-Compatible" content="IE-Edge">
+    <title>瀑布流</title>
+    <meta name="author" content="xiexin">
+    <meta name="description" content="waterfall">
+    <meta name="keywords" content="waterfall js">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <style type="text/css">
+    	*{margin: 0;padding: 0}
+    	#main{margin:0 auto;clear:both;position: relative;}
+    	#main .box{float: left;padding: 5px;border-radius: 4px;border: 1px solid #ccc;box-shadow: 0 0 5px #ccc;}
+
+    </style>
+</head>
+<body>
+    <div id="main">
+    	<div class="box">
+    		<div class="pic"><img src="./images/0.jpg"></div>
+    	</div>
+    	<div class="box">
+    		<div class="pic"><img src="./images/1.jpg"></div>
+    	</div>
+    	<div class="box">
+    		<div class="pic"><img src="./images/2.jpg"></div>
+    	</div>
+    	<div class="box">
+    		<div class="pic"><img src="./images/3.jpg"></div>
+    	</div>
+    	<div class="box">
+    		<div class="pic"><img src="./images/4.jpg"></div>
+    	</div>
+    	<div class="box">
+    		<div class="pic"><img src="./images/5.jpg"></div>
+    	</div>
+    	<div class="box">
+    		<div class="pic"><img src="./images/6.jpg"></div>
+    	</div>
+    	<div class="box">
+    		<div class="pic"><img src="./images/7.jpg"></div>
+    	</div>
+    	<div class="box">
+    		<div class="pic"><img src="./images/8.jpg"></div>
+    	</div>
+    	<div class="box">
+    		<div class="pic"><img src="./images/9.jpg"></div>
+    	</div>
+    	<div class="box">
+    		<div class="pic"><img src="./images/10.jpg"></div>
+    	</div>
+    	<div class="box">
+    		<div class="pic"><img src="./images/11.jpg"></div>
+    	</div>
+    	<div class="box">
+    		<div class="pic"><img src="./images/12.jpg"></div>
+    	</div>
+    	<div class="box">
+    		<div class="pic"><img src="./images/13.jpg"></div>
+    	</div>
+    	<div class="box">
+    		<div class="pic"><img src="./images/14.jpg"></div>
+    	</div>
+    	<div class="box">
+    		<div class="pic"><img src="./images/15.jpg"></div>
+    	</div>
+    	<div class="box">
+    		<div class="pic"><img src="./images/16.jpg"></div>
+    	</div>
+    	<div class="box">
+    		<div class="pic"><img src="./images/17.jpg"></div>
+    	</div>
+    	<div class="box">
+    		<div class="pic"><img src="./images/18.jpg"></div>
+    	</div>
+    	<div class="box">
+    		<div class="pic"><img src="./images/19.jpg"></div>
+    	</div>
+    	<div class="box">
+    		<div class="pic"><img src="./images/20.jpg"></div>
+    	</div>
+    	<div class="box">
+    		<div class="pic"><img src="./images/21.jpg"></div>
+    	</div>
+    	<div class="box">
+    		<div class="pic"><img src="./images/22.jpg"></div>
+    	</div>
+    </div>
+ <script type="text/javascript">
+ 	window.onload=function(){
+ 		waterfall("main","box");
+ 	}
+
+
+ 	function waterfall(main,box){
+ 		//第一部分 获取子元素数组 并且重新调整父元素宽度使其居中。
+ 		//var boxW1=document.getElementsByClassName("box")[0].clientWidth; 为元素边框内宽度
+ 		var boxArr=document.getElementsByClassName(box);                  //获取元素数组  
+ 		//console.log("box clientwidth="+boxW1);
+ 		var boxW=boxArr[0].offsetWidth;                                   //获取元素宽度
+ 		var clientW=document.documentElement.clientWidth;                 //网页宽度
+ 		var cols=Math.floor(clientW/boxW);                                //算出列数
+ 		document.getElementById(main).style.width=cols*boxW+'px';       //重新设置父元素宽度
+
+
+ 		//第二部分 获取第一列高度
+ 		var boxHArr=[];
+ 		for(var i=0;i<boxArr.length;i++){
+ 			if(i<cols){
+ 				boxHArr[i]=boxArr[i].offsetHeight;
+ 			}
+ 			else{
+ 				var minH=Math.min.apply(null,boxHArr);                     //获取最小的高度
+ 				var index= (function(){                       //最小高度所对应的索引
+				 				for(var j=0;j<boxHArr.length;j++){
+				 					if(boxHArr[j]==minH)
+				 						return j;
+				 				}
+ 			                })();                                          //立即执行的函数后一定要带括号 即使没有参数。
+
+                 console.log(index);
+		 	    //第三部分 调整后面元素的位置 并且更新高度数组
+		 	    //position 属性不能加在开始因为加在开始就不能获得元素第一列的高度了。
+		 	    boxArr[i].style.cssText='position:absolute;top:'+minH+'px;left:'+boxArr[index].offsetLeft+'px';
+		        boxHArr[index]+=boxArr[i].offsetHeight;      //更新高度
+ 			}          
+ 	    }				
+ 	}
+ </script>
+</body>
