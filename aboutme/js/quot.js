@@ -54,4 +54,4 @@ $(document).ready(function(){
     $("#author").text(poety[len1][1]);
    // len1 = Math.floor(Math.random() * poety.length);
   });
-})</夏至未至>
+})

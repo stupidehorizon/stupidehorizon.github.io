@@ -7,8 +7,8 @@ myFocus.pattern.extend({//*********************fscreen******************
 		var $thumbBox=$focus.addListThumb();
 		var $thumbUl=$thumbBox.find('ul');
 		var $thumbList=$thumbUl.find('li');
-		var $prevBtn=$focus.addHtml('<div class="prev"><a href="javascript:;" target="_blank" rel="external">&#8249;</a></div>');
-		var $nextBtn=$focus.addHtml('<div class="next"><a href="javascript:;" target="_blank" rel="external">&#8250;</a></div>');
+		var $prevBtn=$focus.addHtml('<div class="prev"><a href="javascript:;">&#8249;</a></div>');
+		var $nextBtn=$focus.addHtml('<div class="next"><a href="javascript:;">&#8250;</a></div>');
 		//CSS
 		var p=settings,showNum=p.thumbShowNum,thuBoxWidth=p.width-p.thumbBtnWidth*2,thuWidth=Math.round(thuBoxWidth/showNum),n=$picList.length;
 		$thumbBg.css({height:p.thumbHeight});

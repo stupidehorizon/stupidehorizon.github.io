@@ -6,9 +6,9 @@ myFocus.pattern.extend({//*********************tbhuabao******************
 		$picUl[0].innerHTML+=$picUl[0].innerHTML;//无缝复制
 		var $txtList=$focus.addListTxt().find('li');
 		var $dotList=$focus.addList('dot').find('li');
-		$dotList.each(function(){this.innerHTML='<a href="javascript:;" target="_blank" rel="external">&bull;</a>'});//小点
-		var $prevBtn=$focus.addHtml('<div class="prev"><a href="javascript:;" target="_blank" rel="external">&#8249;</a></div>');
-		var $nextBtn=$focus.addHtml('<div class="next"><a href="javascript:;" target="_blank" rel="external">&#8250;</a></div>');
+		$dotList.each(function(){this.innerHTML='<a href="javascript:;">&bull;</a>'});//小点
+		var $prevBtn=$focus.addHtml('<div class="prev"><a href="javascript:;">&#8249;</a></div>');
+		var $nextBtn=$focus.addHtml('<div class="next"><a href="javascript:;">&#8250;</a></div>');
 		//CSS
 		var w=settings.width,h=settings.height,dotH=32,arrTop=h/2-32,n=$txtList.length;
 		$focus[0].style.height=h+dotH+'px';

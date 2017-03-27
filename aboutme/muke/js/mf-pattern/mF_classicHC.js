@@ -10,4 +10,22 @@ myFocus.pattern.extend({
 		var txtH=settings.txtHeight,w=settings.width,h=settings.height;
 		$focus.css({width:w+2,height:h+txtH+2});
 		$numBg[0].style.bottom=$numBox[0].style.bottom=txtH+1+'px';
-		for(var i=0,n=$picList.length;i
+		for(var i=0,n=$picList.length;i<n;i++){
+			$picList[i].style.display='none';
+			$txtList[i].style.cssText='display:none;top:'+(h+2)+'px;width:'+(w+2)+'px';
+		}
+		//PLAY
+		$focus.play(function(i){
+			$picList[i].style.display='none';
+			$txtList[i].style.display='none';
+			$numList[i].className='';
+		},function(i){
+			$picList.eq(i).fadeIn();
+			$txtList[i].style.display='';
+			$numList[i].className='current';
+		});
+		//Control
+		$focus.bindControl($numList);
+	}
+});
+myFocus.config.extend({'mF_classicHC':{txtHeight:26}});//默认文字层高度

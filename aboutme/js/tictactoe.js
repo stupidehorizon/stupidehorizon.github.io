@@ -55,7 +55,8 @@ function AI(){
 
   var temp=-100;
   var best;
-  for(var i=0;i<=8;i++){ if(weight[i]="">temp&&map[i]===0){
+  for(var i=0;i<=8;i++){
+    if(weight[i]>temp&&map[i]===0){
        temp=weight[i];
        best=i+1;
     }
@@ -218,4 +219,3 @@ function ifWin(){
 $(document).ready(function(){
   play();
 })
-</=8;i++){>

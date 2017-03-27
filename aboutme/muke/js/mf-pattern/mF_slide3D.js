@@ -9,7 +9,7 @@ myFocus.pattern.extend({//*********************mF_slide3D******************
 		var $m12=$focus.addHtml('<div class="mask12"></div>');
 		var $m21=$focus.addHtml('<div class="mask21"></div>');
 		var $m22=$focus.addHtml('<div class="mask22"></div>');
-		var $nextBtn=$focus.addHtml('<div class="next"><a href="javascript:;" target="_blank" rel="external">NEXT</a></div>');
+		var $nextBtn=$focus.addHtml('<div class="next"><a href="javascript:;">NEXT</a></div>');
 		//PLAY
 		var w=settings.width,
 			h=settings.height,

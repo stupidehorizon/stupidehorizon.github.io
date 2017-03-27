@@ -12,10 +12,12 @@ myFocus.pattern.extend({
 		var $numList=$focus.addListNum().find('li');
 		//HTML++
 		var c=Math.floor(settings.height/settings.chipHeight),n=$txtList.length,html=['<ul>'];
-		for(var i=0;i<c;i++){ html.push('<li=""><div>');
-			for(var j=0;j<n;j++) html.push($piclist[j].innerhtml);="" html.push('<="" div="">');
+		for(var i=0;i<c;i++){
+			html.push('<li><div>');
+			for(var j=0;j<n;j++) html.push($picList[j].innerHTML);
+			html.push('</div></li>');
 		}
-		html.push('</n;j++)></div></c;i++){></ul>');
+		html.push('</ul>');
 		$picBox[0].innerHTML=html.join('');
 		//CSS
 		var w=settings.width,h=settings.height,cH=Math.round(h/c);
@@ -32,4 +34,20 @@ myFocus.pattern.extend({
 		},function(i){
 			var tt=settings.type||Math.round(1+Math.random()*2);//效果选择
 			var dur=tt===1?1200:300;
-			for(var j=0;j
+			for(var j=0;j<c;j++){
+				$picDivList.eq(j).slide({top:-i*h-j*cH},tt===3?Math.round(300+(Math.random()*(1200-300))):dur);
+				dur=tt===1?dur-150:dur+150;
+			}
+			$txtList[i].style.display='block';
+			$numList[i].className = 'current';
+		});
+		//Control
+		$focus.bindControl($numList);
+	}
+});
+myFocus.config.extend({
+	'mF_liuzg':{//可选个性参数
+		chipHeight:36,//图片切片高度(像素)，越大切片密度越小
+		type:0////切片效果，可选：1(甩头) | 2(甩尾) | 3(凌乱) | 0(随机)
+	}
+});

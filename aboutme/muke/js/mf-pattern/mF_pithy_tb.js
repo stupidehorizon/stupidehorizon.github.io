@@ -8,8 +8,8 @@ myFocus.pattern.extend({//*********************pithy******************
 		var $thumbBox=$focus.addListThumb();
 		var $thumbUl=$thumbBox.find('ul');
 		var $thumbList=$thumbUl.find('li');
-		var $prevBtn=$focus.addHtml('<div class="prev"><a href="javascript:;" target="_blank" rel="external">&and;</a></div>');
-		var $nextBtn=$focus.addHtml('<div class="next"><a href="javascript:;" target="_blank" rel="external">&or;</a></div>');
+		var $prevBtn=$focus.addHtml('<div class="prev"><a href="javascript:;">&and;</a></div>');
+		var $nextBtn=$focus.addHtml('<div class="next"><a href="javascript:;">&or;</a></div>');
 		var $prevBtn2=$focus.addHtml('<div class="prev-2"></div>');
 		var $nextBtn2=$focus.addHtml('<div class="next-2"></div>');
 		//CSS
