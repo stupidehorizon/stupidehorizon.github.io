@@ -106,3 +106,30 @@ body{
 	padding-bottom: 10px;
 	height: 1293px;
 }
+
+.demo-switch{
+	display: inline-block;
+	margin-left: 17px;
+}
+.bt{
+	background-color: white;
+	color: #416c97 ;
+	border: 1px solid black;
+	border-radius: 0px ;
+	margin:0 !important;
+	padding: 10px 20px;
+	float: left;
+
+}
+
+
+
+.bt:hover{
+	background-color: #416c97;
+	color:white;
+}
+
+.bt:visited{
+	background-color: #416c97;
+	color:white;
+}
