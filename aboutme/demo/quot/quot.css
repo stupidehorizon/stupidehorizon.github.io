@@ -1,0 +1,57 @@
+*{
+  margin:0;
+  padding:0;
+  list-style:none; 
+}
+body{
+  background-color:#16a085;
+  color:#16a085;
+  padding-top: 100px;
+}
+#quote-box{
+  display:table;
+  background-color:white;
+  width:450px;
+  height:auto;
+  margin:50px auto auto auto;
+  border-radius:5px; 
+  text-align:center;
+  padding:40px 50px;
+}
+#quote-text{
+  font-size:20px;
+}
+#quote-author{
+  font-size:14px;
+    text-align:right;
+  margin-top:20px;
+}
+.buttons{
+  height:30px;
+    margin:0;
+    display:block;
+  margin-top:50px;
+  width:450px;
+  
+}
+.button{
+  border:none;
+  background-color:#16a085;
+ 
+  color:#fff;
+  font-size:20px;
+  display:block;
+  padding:8px 18px;
+  border-radius:3px;
+  float:left;
+  margin-left:20px;
+  outline:none;
+  
+}
+.footer {
+  margin:30px auto;
+  color:white;
+}
+.footer a{
+  color:white;
+}

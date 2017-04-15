@@ -1,177 +1,319 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
-	<head>
-	  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-	  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<html>
+<head>
+<title>我的个人主页</title>
+<meta charset="utf-8">
+<meta name="author" content="xiexin">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="./css/index.css">
+<link rel="stylesheet" type="text/css" href="./bootstrap-3.3.7-dist/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="header">
+  	<div class="container">
+  		<div class="row">
+  			<div class="col-md-4 head-left">
+  				<img src="./images/img1.jpg">
+  			</div>
+  			<div class="col-md-8 head-right">
+  				<h2>hello</h2>
+          <h3>我是谢鑫</h3>
+          <h5>求职目标：前端工程师</h5>
+  				<ul>
+  					<li>出生日期：1995-08-14</li>
+  					<li>电话：18121816041</li>
+  					<li>邮箱：122505231@qq.com</li>
+  					<li>个人博客：www.stupidehorizon.github.io</li>
+  				</ul>
+  			</div>
+  		</div>
+  	</div>
+  </div>
 
-	  <title>about me</title>
-	  <link rel="stylesheet" href="./css/index.css"> 
-	   <link rel="stylesheet" href="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
-	</head>
-	<body>
-		<div class="container">
-		<div class="raw">
-	      <div class="col-lg-4 background-blue">
+  <div class="nav">
+    <div class="nav-content" id="head-nav">
+      <ul>
+        <li class="scr" data-dataid="aboutme"><a>关于我</a></li>
+        <li class="scr" data-dataid="i-can"><a>我会什么</a></li>
+        <li class="scr" data-dataid="skills"><a>技能加点</a></li>
+        <li class="scr" data-dataid="project"><a>我的项目</a></li>
+        <li class="scr" data-dataid="contact"><a>联系我</a></li>
+      </ul>
+    </div>
+  </div>
 
-	      		<div class="photo">
-	      			<img src="./image/my.jpg" alt="图片加载失败"  />
-	      		</div>
+  <div class="aboutme" id="aboutme">
+    <h1 class="content-title">About Me</h1>
+    <div class="my-info">
+      <div class="col-md-6 info-left">
+        <h3>教育背景</h3>
+        <span class="glyphicon glyphicon-check"></span>
+      </div>
+      <div class="col-md-6  info-right">
+        <li>2014年进入成都理工大学 电子信息工程专业。</li>
+          <li>主修课程：高数，概率论，大学物理，C语言，数据库，微机原理，嵌入式系统设计，操作系统等。</li>
+      </div>
+      <div class="clear"></div>
+     </div>
+   <div class="my-info">
+      <div class="col-md-6 info-left">
+        <li>大一在在信科院编辑于宣传部管理微信微博官方QQ空间。</li>
+          <li>大二在成都理工大学招生办负责微信内容的制作主要负责图片采集拍摄与后期制作，设计了招生信息网的首页轮播图</li>
+            <li>摄影作品多次获得校内奖项。并有多张被采集到了校2016年招生简历中。</li>
+      </div>
+      <div class="col-md-6  info-right">
+         <span class="glyphicon glyphicon-check"></span>
+        <h3>实践活动</h3>
+      </div>
+      <div class="clear"></div>
+  </div>
+   <div class="my-info">
+      <div class="col-md-6 info-left">
+        <h3>兴趣爱好</h3>
+        <span class="glyphicon glyphicon-check"></span>
+      </div>
+      <div class="col-md-6  info-right">
+        <li>喜欢跑步，音乐，读书，摄影。</li>
+          <li>一学期平均跑步100公里，再忙也会去锻炼身体，喜欢在跑道上的感觉，只有风和耳机里的歌声。</li>
+          <li>喜欢摄影，最常用的设备就是手机，生活中许多美丽的瞬间都是不经意间发生，而手机刚好就在手里。</li>
+      </div>
+      <div class="clear"></div>
+  </div>
+  <div class="my-info">
+      <div class="col-md-6 info-left">
+        <li>具有良好的团队精神，很强的社会责任感;</li>
+          <li>喜欢互联网，热爱技术分享；</li>
+          <li>喜欢专研，抗压能力，抗挫折能力强；</li>
+          <li>热爱生活，勤奋好学，自学能力强；</li>
+      </div>
+      <div class="col-md-6  info-right">
+         <span class="glyphicon glyphicon-check"></span>
+        <h3>自我总结</h3>
+      </div>
+      <div class="clear"></div>
+  </div>
+</div>
 
-	      		<div class="list">
-		      		<div class="inline">
-			      		<button type="button" class="btn .btn-default ">
-			  				<span class="glyphicon glyphicon-user radius"></span>
-						</button>
-					</div>
-					<span class="description">21岁</span>
-				</div>
+ <div class="myskill" id="i-can">
+    <h1 class="content-title">What I Can</h1>
+    <div class="my-info">
+      <div class="col-md-6 info-left">
+        <h3>网页布局</h3>
+        <span class="glyphicon glyphicon-ok-circle"></span>
+      </div>
+      <div class="col-md-6  info-right">
+        <li>熟练的使用html，css构建网页，支持 w3c 规范的前台网页重构,对 DIV+CSS 盒子模型布局有深刻的理解;</li>
+        <li>熟悉 HTML5 语义化标签编程和 CSS3 结构选择器和动画并加以使用；</li> 
+        <li>能够熟练的使用Photoshop修改设计图；</li>
+      </div>
+      <div class="clear"></div>
+     </div>
+    <div class="my-info">
+      <div class="col-md-6 info-left">
+        <li> 对于javascript的闭包，作用域,原型链与异步等有深入的认识；</li>
+        <li> 熟悉掌握 JavaScript 中 Dom 编程基本原理，以及面向对象编程思想,与基于jquery的插件拓展思维；</li>
+        <li>熟练使用原生JS或Jquery对DOM的操作；</li>
+        <li>熟悉 Ajax 后台的异步刷新</li>
+      </div>
+      <div class="col-md-6  info-right">
+         <span class="glyphicon glyphicon-ok-circle"></span>
+        <h3>逻辑交互</h3>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="my-info">
+      <div class="col-md-6 info-left">
+        <h3>框架插件</h3>
+        <span class="glyphicon glyphicon-ok-circle"></span>
+      </div>
+      <div class="col-md-6  info-right">
+        <li>熟练使用jquery，bootstrap，ejs,sass快速的开发响应式的网页;</li>
+        <li>理解jquery的插件拓展思维，能够写Jquery插件；</li>
+        <li>对React,Vue有过了解，使用Vue开发过小项目；</li>
+        <li>会使用前端自动化工具gulp,grunt。</li>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="my-info">
+      <div class="col-md-6 info-left">
+        <li>熟悉后台 Nodejs+MongoDB+Express 的服务器搭建。写过Node+MongoDB的电影网站项目；</li>
+        <li>对HTTP传输协议有过深入了解；</li>
+      </div>
+      <div class="col-md-6  info-right">
+         <span class="glyphicon glyphicon-ok-circle"></span>
+        <h3>后端</h3>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
 
-				
-
-	      		<div class="list">
-		      		<div class="inline">
-			      		<button type="button" class="btn .btn-default ">
-			  				<span class="glyphicon glyphicon-home"></span>
-						</button>
-					</div>
-					<span class="description">成都理工大学</span>
-				</div>
-
-				<div class="list">
-		      		<div class="inline">
-			      		<button type="button" class="btn .btn-default ">
-			  				<span class="glyphicon glyphicon-bookmark"></span>
-						</button>
-					</div>
-					<span class="description">电子信息工程</span>
-				</div>
-
-	      		<div class="list">
-		      		<div class="inline">
-			      		<button type="button" class="btn .btn-default ">
-			  				<span class="glyphicon glyphicon-envelope"></span>
-						</button>
-					</div>
-					<span class="description">122505231@qq.com</span>
-				</div>
-
-				<div class="progress-div">
-					<h5 class="white">html</h5>
-					<div class="progress">
-						<div class="progress-bar progress-bar-info"  style="width: 80%;"></div>
-					</div>
-				</div>
-
-				<div class="progress-div">
-					<h5 class="white">css</h5>
-					<div class="progress">
-						<div class="progress-bar progress-bar-info"  style="width: 70%;"></div>
-					</div>
-				</div>
-
-				<div class="progress-div">
-					<h5 class="white">javascript</h5>
-					<div class="progress">
-						<div class="progress-bar progress-bar-info"  style="width: 80%;"></div>
-					</div>
-				</div>
-
-				<div class="progress-div">
-					<h5 class="white">jquery</h5>
-					<div class="progress">
-						<div class="progress-bar progress-bar-info"  style="width: 75%;"></div>
-					</div>
-				</div>
-
-				<div class="progress-div">
-					<h5 class="white">bootstrap</h5>
-					<div class="progress">
-						<div class="progress-bar progress-bar-info"  style="width: 70%;"></div>
-					</div>
-				</div>
+<div class="skill" id="skills">
+  <h1 class="content-title">Skills</h1>
+  <div class="col-md-6">
+    <h4>HTML/CSS</h4>
+    <div class="progress">
+      <div class="progress-bar" style="width:80%"></div>
+    </div>
+    <h4>JS</h4>
+    <div class="progress">
+      <div class="progress-bar" style="width:84%"></div>
+    </div>
+    <h4>JQuery</h4>
+    <div class="progress">
+      <div class="progress-bar" style="width:70%"></div>
+    </div>
+     <h4>Photoshop</h4>
+    <div class="progress">
+      <div class="progress-bar" style="width:80%"></div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h4>Bootstrap</h4>
+    <div class="progress">
+      <div class="progress-bar" style="width:75%"></div>
+    </div>
+    <h4>NodeJS</h4>
+    <div class="progress">
+      <div class="progress-bar" style="width:65%"></div>
+    </div>
+    <h4>VUE</h4>
+    <div class="progress">
+      <div class="progress-bar" style="width:66%"></div>
+    </div>
+     <h4>Ajax</h4>
+    <div class="progress">
+      <div class="progress-bar" style="width:76%"></div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+</div>
 
 
-				<div class="progress-div">
-					<h5 class="white">photoshop</h5>
-					<div class="progress">
-						<div class="progress-bar progress-bar-info"  style="width: 70%;"></div>
-					</div>
-				</div>
-
-
-				<div class="progress-div">
-					<h5 class="white">node</h5>
-					<div class="progress">
-						<div class="progress-bar progress-bar-info"  style="width: 50%;"></div>
-					</div>
-				</div>
-
-				<div class="progress-div">
-					<h5 class="white">vue</h5>
-					<div class="progress">
-						<div class="progress-bar progress-bar-info"  style="width: 30%;"></div>
-					</div>
-				</div>
-
-				<div class="progress-div">
-					<h5 class="white">MongoDB</h5>
-					<div class="progress">
-						<div class="progress-bar progress-bar-info"  style="width: 70%;"></div>
-					</div>
-				</div>
-				
-				</div>
-
-	      <div class="col-lg-8 background-white">
-	      	
-		      	<h1>谢鑫</h1>
-		      	<p>求职意向：前端工程师</p>
-
-		      	<div class="content1">
-			      		<span class="glyphicon glyphicon-pencil"></span><h4 class="inline"> 关于我</h4>
-			      	<div class="about">
-			      		<ul>
-			      			<li>教育背景：成都理工大学电子信息工程专业大三在读。</li>
-			      			<li>技能：熟练的使用html，css，javascpipt构建动态网站,能写jquery插件，熟练运用bootstrap，擅长使用photoshop，用node和MongoDB构建过简单的项目，了解vue。</li>
-			      			<li>兴趣爱好：跑步，骑车，看书。</li>
-			      			<li>为什么做前端：可能是喜欢拍照，喜欢设计感强的东西，而前端刚好给我这样一个机会结合自己的兴趣和编码的爱好。以做出漂亮的的页面为乐。</li>
-			      			<li>自我评价：有较强的自我驱动能力和学习能力，坚信 practice makes perfect !</li>
-			      		</ul>
-			      	</div>
-	      	    </div>
-
-	      	    <div class="content2">
-			      		<span class="glyphicon glyphicon-th-large"></span><h4 class="inline"> 作品</h4>
-			      	<div class="about">
-			      		<div class="demo-switch">
-			      			<div class="bt">全部</div>
-			      			<div class="bt">游戏</div>
-			      			<div class="bt">网页布局</div>
-			      			<div class="bt">CSS3</div>
-			      			<div class="bt">Ajax</div>
-			      		</div>
-			      		<ul>
-			      			<li><div class="imgbox"><a href="./html/simon.html"><img src="./image/simongame.png" width="150px" height="150px"></a>西蒙游戏</div></li>
-			      			<li><div class="imgbox"><a href="./html/jscalculator.html"><img src="./image/jscalculator.png" width="150px" height="150px"></a>JS计算器</div></li>
-			      			<li><div class="imgbox"><a href="./html/tictactoe.html"><img src="./image/tictactoe.png" width="150px" height="150px"></a>井字棋</div></li>
-			      			<li><div class="imgbox"><a href="./html/quot.html"><img src="./image/quot.png" width="150px" height="150px"></a>随机句子</div></li>
-			      			<li><div class="imgbox"><a href="./html/twitchviwer.html"><img src="./image/twitch.png" width="150px" height="150px"></a>Twitch Viewer</div></li>
-			      			<li><div class="imgbox"><a href="./html/danmu.html"><img src="./image/danmu.png" width="150px" height="150px"></a>弹幕墙</div></li>
-			      			<li><div class="imgbox"><a href="./html/vkviwer.html"><img src="./image/wikiviwer.png" width="150px" height="150px"></a>维基百科API</div></li>
-			      			<li><div class="imgbox"><a href="./muke/muke.html"><img src="./image/muke.png" width="150px" height="150px"></a>慕课网首页</div></li>
-			      			<li><div class="imgbox"><a href="../demo/waterfall"><img src="./image/waterfall.jpg" width="150px" height="150px"></a>瀑布流布局</div></li>
-			      			<li><div class="imgbox"><a href="../demo/pageswitch"><img src="./image/pageswitch.jpg" width="150px" height="150px"></a>全屏轮播jquery插件</div></li>
-			      			<li><div class="imgbox"><a href="../demo/gallery"><img src="./image/gallery.jpg" width="150px" height="150px"></a>js+css3图片画廊</div></li>
-			      			
-			      		</ul>
-			      	</div>
-	      	    </div>
-	      	    
-	      	</div>
-
-	      </div>
-	  </div>
-	  </div>
-
-	</body>
+<div class="my-project" id="project">
+  <h1 class="content-title">My Project</h1>
+  <div class="project-nav nav">
+    <ul>
+      <li class="demo-li active">All</li>
+      <li class="demo-li">HTML/CSS</li>
+      <li class="demo-li">JS</li>
+      <li class="demo-li">Ajax</li>
+      <li class="demo-li">Node/MongoDB</li>
+      <li class="demo-li">VUE</li>
+    </ul>
+  </div>
+  <div class="col-md-4 project JS">
+    <a href="./demo/gallery" target="blanket">
+      <div class="gird">
+        <img src="./images/g1.jpg">
+        <div class="description">
+          <h3>图片画廊</h3>
+          <p>使用CSS3和JS打造的图片画廊</p>
+        </div>
+      </div>
+    </a>
+  </div>
+   <div class="col-md-4 project JS">
+    <a href="./demo/tictactoe" target="blanket">
+      <div class="gird">
+        <img src="./images/g2.jpg">
+        <div class="description">
+          <h3>井字棋</h3>
+          <p>使用jquery写的井字棋游戏，使用了极大值极小值算法</p>
+        </div>
+      </div>
+    </a>
+  </div>
+   <div class="col-md-4 project JS">
+    <a href="./demo/pageswitch" target="blanket">
+      <div class="gird">
+        <img src="./images/g3.jpg">
+        <div class="description">
+          <h3>全屏轮播插件</h3>
+          <p>用jquery写的全屏轮播插件，可实现竖屏或横屏轮播</p>
+        </div>
+      </div>
+    </a>
+  </div>
+   <div class="col-md-4 project JS">
+    <a href="./demo/jscalculator"  target="blanket">
+      <div class="gird">
+        <img src="./images/g4.jpg">
+        <div class="description">
+          <h3>js计算器</h3>
+          <p>使用js写的计算器</p>
+        </div>
+      </div>
+    </a>
+  </div>
+   <div class="col-md-4 project">
+    <a href="./demo/quot" target="blanket">
+      <div class="gird">
+        <img src="./images/g5.jpg">
+        <div class="description">
+          <h3>随机句子</h3>
+          <p>点击切换一个随机的句子，使用了jquey</p>
+        </div>
+      </div>
+    </a>
+  </div>
+   <div class="col-md-4 project JS">
+    <a href="./demo/ximon" target="blanket">
+      <div class="gird">
+        <img src="./images/g6.jpg">
+        <div class="description">
+          <h3>西蒙游戏</h3>
+          <p>模仿了经典的西蒙游戏，灯会随机亮起来，而你需要记住正确的顺序，并点击，使用了js,jquery</p>
+        </div>
+      </div>
+    </a>
+  </div>
+   <div class="col-md-4 project JS HTML/CSS">
+    <a href="./demo/waterfall" target="blanket">
+      <div class="gird">
+        <img src="./images/g7.jpg">
+        <div class="description">
+          <h3>瀑布流布局</h3>
+          <p>使用JS打造的瀑布流布局</p>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="col-md-4 project JS HTML/CSS">
+    <a href="./demo/danmu" target="blanket">
+      <div class="gird">
+        <img src="./images/g8.jpg">
+        <div class="description">
+          <h3>弹幕墙</h3>
+          <p>使用jquery打造的弹幕墙，主要通过jquery的动画效果实现</p>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="col-md-4 project Ajax">
+    <a href="./demo/twitchviwer" target="blanket">
+      <div class="gird">
+        <img src="./images/g9.jpg">
+        <div class="description">
+          <h3>Twitter Viwer</h3>
+          <p>使用ajax，通过Twitter提供的API获取主播是否在线等信息。</p>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="clearfix"></div>
+</div>
+<footer class="contact" id="contact">
+   <h1 class="content-title">Contact Me</h1>
+    <ul>
+        <li><span class="glyphicon glyphicon-phone"></span> 电话：181-2181-6041</li>
+        <li><span class="glyphicon glyphicon-envelope"></span> 邮箱：122505231@qq.com</li>
+        <li><p><img src="./images/font-524.png" style="width:20px;height:20px">QQ：122505231</p></li>
+        <li><a href="https://github.com/stupidehorizon" target="blanket"><p><img src="./images/github.png" style="width:20px;height:20px">github：stupidehorizon</p></a></li>
+    </ul>
+</footer>
+  <script type="text/javascript" src="./js/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="./bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="./js/index.js"></script>
+  <a id="toTop"><span class="glyphicon glyphicon-circle-arrow-up toTopSpan"></span></a>
+</body>
 </html>
