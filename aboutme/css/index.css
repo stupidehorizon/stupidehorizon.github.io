@@ -1,13 +1,14 @@
 *{
 	margin: 0;
 	padding: 0;
-	transition:all 0.5s;
+}
+ .header a{
+	color: white !important;
 }
 .header{
 	width: 100%;
 	background: url(../images/a.jpg) no-repeat 0 0;
 	background-size: cover;
-
 }
 html,body{
 	width: 100%;
@@ -109,6 +110,7 @@ h1,h2,h3,h4,h5,h6{
     transform: scale(0.8);
 	-o-transform: scale(0.8);
 	-ms-transform: scale(0.8);
+	cursor:pointer;
 }
 
 
@@ -397,4 +399,7 @@ h1,h2,h3,h4,h5,h6{
 	list-style: none;
 	display: inline-block;
 	padding: 20px;
+}
+.contact a{
+	color: black !important;
 }
