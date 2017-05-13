@@ -16,19 +16,19 @@
     
     
 
-    <meta name="description" content="前一段时间我总是被这样一个问题困扰，我在github的展示页中传的个人页面总是被hexo覆盖掉，而且我把文件放在hexo中页面又总是被hexo生成博客的侧边栏。一方面我不想放弃hexo这个十分便利的个人博客，另一方面我又不得  不有个人的简历页面。所以我尝试每次hexo d后,再pull远程库，放入个人页面文件commit后再Push十分麻烦，。好在我今天终于解决了这个问题。
-只要在html页面首">
+    <meta name="description" content="前一段时间我总是被这样一个问题困扰，，我把想展示的页面放在hexo的根目录中会被hexo渲染然后生页面会加上博客的侧边栏。但是我不想要这个侧边栏。
+##解决办法其实很简单，只需要将需要独立展示的页面文件放入public文件下即可。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在hexo中创建无依赖的页面 | HORIZON">
 <meta property="og:url" content="http://yoursite.com/2017/03/11/关于如何在hexo中创建无依赖的页面/index.html">
 <meta property="og:site_name" content="HORIZON">
-<meta property="og:description" content="前一段时间我总是被这样一个问题困扰，我在github的展示页中传的个人页面总是被hexo覆盖掉，而且我把文件放在hexo中页面又总是被hexo生成博客的侧边栏。一方面我不想放弃hexo这个十分便利的个人博客，另一方面我又不得  不有个人的简历页面。所以我尝试每次hexo d后,再pull远程库，放入个人页面文件commit后再Push十分麻烦，。好在我今天终于解决了这个问题。
-只要在html页面首">
-<meta property="og:updated_time" content="2017-04-12T11:22:10.860Z">
+<meta property="og:description" content="前一段时间我总是被这样一个问题困扰，，我把想展示的页面放在hexo的根目录中会被hexo渲染然后生页面会加上博客的侧边栏。但是我不想要这个侧边栏。
+##解决办法其实很简单，只需要将需要独立展示的页面文件放入public文件下即可。">
+<meta property="og:updated_time" content="2017-05-13T11:27:38.028Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在hexo中创建无依赖的页面 | HORIZON">
-<meta name="twitter:description" content="前一段时间我总是被这样一个问题困扰，我在github的展示页中传的个人页面总是被hexo覆盖掉，而且我把文件放在hexo中页面又总是被hexo生成博客的侧边栏。一方面我不想放弃hexo这个十分便利的个人博客，另一方面我又不得  不有个人的简历页面。所以我尝试每次hexo d后,再pull远程库，放入个人页面文件commit后再Push十分麻烦，。好在我今天终于解决了这个问题。
-只要在html页面首">
+<meta name="twitter:description" content="前一段时间我总是被这样一个问题困扰，，我把想展示的页面放在hexo的根目录中会被hexo渲染然后生页面会加上博客的侧边栏。但是我不想要这个侧边栏。
+##解决办法其实很简单，只需要将需要独立展示的页面文件放入public文件下即可。">
     
     
     
@@ -183,11 +183,9 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <pre><code>前一段时间我总是被这样一个问题困扰，我在github的展示页中传的个人页面总是被hexo覆盖掉，而且我把文件放在hexo中页面又总是被hexo生成博客的侧边栏。一方面我不想放弃hexo这个十分便利的个人博客，另一方面我又不得  不有个人的简历页面。所以我尝试每次hexo d后,再pull远程库，放入个人页面文件commit后再Push十分麻烦，。好在我今天终于解决了这个问题。
-</code></pre><h4 id="只要在html页面首部加上"><a href="#只要在html页面首部加上" class="headerlink" title="只要在html页面首部加上"></a>只要在html页面首部加上</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">---   </div><div class="line">	layout: false</div><div class="line">    title: &quot;关于我&quot;</div><div class="line">    date: 2017-03-11 20:03:48</div><div class="line">---</div></pre></td></tr></table></figure>
-<pre><code>页面就不会被hexo加上博客的模板，亲测有效。以后终于又能愉快的写博客了。  
-</code></pre><h4 id="后话"><a href="#后话" class="headerlink" title="后话"></a>后话</h4><pre><code>后来发现这种方法还是很麻烦，每次都要修改html头部而且更加致命的是这种方法不能保证hexo不会去渲染js,css文件导致项目出现迷之bug(我就在这么被坑的）。所以最后实践告我们最好的办法是将项目文件放到thems/(主题）/sources文件下面。此方法不仅不用修改html头部，而且hexo渲染后会将项目放到根目录下面。
-</code></pre>
+    <p>   前一段时间我总是被这样一个问题困扰，，我把想展示的页面放在hexo的根目录中会被hexo渲染然后生页面会加上博客的侧边栏。但是我不想要这个侧边栏。</p>
+<p>##解决办法<br>其实很简单，只需要将需要独立展示的页面文件放入public文件下即可。</p>
+
   </section>
 
   
