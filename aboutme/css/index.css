@@ -394,7 +394,7 @@ h1,h2,h3,h4,h5,h6{
 	border-bottom: 20px solid black;
 }
 .contact img{
-	vertical-align: baseline;
+	vertical-align: middle;
 }
 .contact li{
 	list-style: none;
@@ -403,4 +403,7 @@ h1,h2,h3,h4,h5,h6{
 }
 .contact a{
 	color: black !important;
+}
+.contact span{
+	vertical-align: middle;
 }

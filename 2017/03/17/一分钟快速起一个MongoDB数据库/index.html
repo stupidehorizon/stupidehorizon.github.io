@@ -26,7 +26,7 @@
 <meta property="og:description" content="1,数据库安装此处不多说直接百度官网找到对应自己电脑的版本下载傻瓜式安装。
 2、添加环境变量在Windows系统可能需要添加环境变量命令行命令才可用进入系统高级设置 添加环境变量path中添加已安装MongoDB的bin文件路径比如我添加的是 D:\MongoDB\Server\3.4\bin
 3、在任意盘下新建数据库存放文件夹比如我在D盘下创建了MongoDB-data文件，并在里面创建了dat">
-<meta property="og:updated_time" content="2017-05-13T12:01:11.864Z">
+<meta property="og:updated_time" content="2017-05-14T01:13:00.060Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MongoDB数据库入门操作 | HORIZON">
 <meta name="twitter:description" content="1,数据库安装此处不多说直接百度官网找到对应自己电脑的版本下载傻瓜式安装。
@@ -197,10 +197,7 @@ classes that you can use:
 <li>简而言之 通过mongod建立一个数据库并指定一个端口等待连接。</li>
 <li>通过 mongo(MoNgoDB shell)来连接并且操作数据库。  </li>
 </ul>
-<h5 id="1-打开命令行输入"><a href="#1-打开命令行输入" class="headerlink" title="1. 打开命令行输入"></a>1. 打开命令行输入</h5><ul>
-<li><figure class="highlight plain"><figcaption><span>-port 28008 -dbpath D:\MongoDB-data\data\db``</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">通过-port指定端口，通过-dbpath指定数据库存放目录。</div><div class="line">- ##### 或者通过mongod_config.txt配置文件启动数据库</div><div class="line">建立配置文件</div><div class="line">```javascript</div><div class="line">verbose=true</div><div class="line">port=27017</div><div class="line">dbpath=D:\MongoDB-data\data\db</div><div class="line">noauth=true</div><div class="line">maxConns=10</div><div class="line">rest=true</div></pre></td></tr></table></figure>
-</li>
-</ul>
+<h5 id="1-打开命令行输入"><a href="#1-打开命令行输入" class="headerlink" title="1. 打开命令行输入"></a>1. 打开命令行输入</h5><figure class="highlight plain"><figcaption><span>-port 28008 -dbpath D:\MongoDB-data\data\db``</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">通过-port指定端口，通过-dbpath指定数据库存放目录。</div><div class="line">- ##### 或者通过mongod_config.txt配置文件启动数据库</div><div class="line">建立配置文件</div><div class="line">```javascript</div><div class="line">verbose=true</div><div class="line">port=27017</div><div class="line">dbpath=D:\MongoDB-data\data\db</div><div class="line">noauth=true</div><div class="line">maxConns=10</div><div class="line">rest=true</div></pre></td></tr></table></figure>
 <p>命令行输入指定配置文件地址<br><code>- mongod --config D:\MongoDB\Server\3.4\bin\mongod_config.txt</code></p>
 <h5 id="2-再打开一个命令行输入"><a href="#2-再打开一个命令行输入" class="headerlink" title="2. 再打开一个命令行输入"></a>2. 再打开一个命令行输入</h5><p><code>mongo localhost:27017</code><br>不出意外数据库启动并连接成功！</p>
 <h3 id="5、-关闭数据库"><a href="#5、-关闭数据库" class="headerlink" title="5、 关闭数据库"></a>5、 关闭数据库</h3><p>在使用 mongo 的命令行中输入<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">use admin</div><div class="line">db.shutdownServer()</div></pre></td></tr></table></figure></p>
