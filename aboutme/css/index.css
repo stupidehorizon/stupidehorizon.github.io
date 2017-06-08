@@ -2,6 +2,9 @@
 	margin: 0;
 	padding: 0;
 }
+li{
+	list-style: circle outside none;
+}
  .header a{
 	color: white !important;
 }
