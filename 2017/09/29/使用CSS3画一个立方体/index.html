@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      使用CSS3画一个立方体 | HORIZON 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="horizon">
+    
+    
+
+    <meta name="description" content="最近面试有问道一些关于CSS3新特性的问题，因为最近平时虽然了解过很多，但是基本没怎么写过。所以这次就写一个demo熟悉一下CSS3的一些新特性。
+使用CSS3画一个立方体。1. 首先搭建框架123456789101112131415161718192021222324252627282930313233343536373839404142&amp;lt;div class=&quot;stage&quot;&amp;gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用CSS3画一个立方体 | HORIZON">
+<meta property="og:url" content="http://yoursite.com/2017/09/29/使用CSS3画一个立方体/index.html">
+<meta property="og:site_name" content="HORIZON">
+<meta property="og:description" content="最近面试有问道一些关于CSS3新特性的问题，因为最近平时虽然了解过很多，但是基本没怎么写过。所以这次就写一个demo熟悉一下CSS3的一些新特性。
+使用CSS3画一个立方体。1. 首先搭建框架123456789101112131415161718192021222324252627282930313233343536373839404142&amp;lt;div class=&quot;stage&quot;&amp;gt;">
+<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/005NdwvWly1fk0i1aenjfj30rk0kuglv.jpg">
+<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/005NdwvWly1fk0i2ewlu6j30rn0l3wex.jpg">
+<meta property="og:image" content="http://wx2.sinaimg.cn/mw690/005NdwvWly1fk0j3e7n8ag30rl0k0tgx.gif">
+<meta property="og:updated_time" content="2017-09-29T08:50:42.539Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用CSS3画一个立方体 | HORIZON">
+<meta name="twitter:description" content="最近面试有问道一些关于CSS3新特性的问题，因为最近平时虽然了解过很多，但是基本没怎么写过。所以这次就写一个demo熟悉一下CSS3的一些新特性。
+使用CSS3画一个立方体。1. 首先搭建框架123456789101112131415161718192021222324252627282930313233343536373839404142&amp;lt;div class=&quot;stage&quot;&amp;gt;">
+<meta name="twitter:image" content="http://wx3.sinaimg.cn/mw690/005NdwvWly1fk0i1aenjfj30rk0kuglv.jpg">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">HORIZON</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          只要你一句话，我愿陪你走天涯
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">使用CSS3画一个立方体</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-09-29" class="post-meta__date date">2017-09-29</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/生活感悟/">生活感悟</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>最近面试有问道一些关于CSS3新特性的问题，因为最近平时虽然了解过很多，但是基本没怎么写过。所以这次就写一个demo熟悉一下CSS3的一些新特性。</p>
+<h3 id="使用CSS3画一个立方体。"><a href="#使用CSS3画一个立方体。" class="headerlink" title="使用CSS3画一个立方体。"></a>使用CSS3画一个立方体。</h3><h4 id="1-首先搭建框架"><a href="#1-首先搭建框架" class="headerlink" title="1. 首先搭建框架"></a>1. 首先搭建框架</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"stage"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content"</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">svg</span>   <span class="attr">id</span>=<span class="string">"cubic1"</span> <span class="attr">xmlns</span>=<span class="string">"http://www.w3.org/2000/svg"</span> &gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">rect</span>   <span class="attr">height</span>=<span class="string">"200"</span> <span class="attr">width</span>=<span class="string">"200"</span> /&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">text</span> <span class="attr">x</span>=<span class="string">"90px"</span> <span class="attr">y</span>=<span class="string">"110px"</span> <span class="attr">fill</span>=<span class="string">"red"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">                <span class="tag">&lt;/<span class="name">svg</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">svg</span>   <span class="attr">id</span>=<span class="string">"cubic2"</span> <span class="attr">xmlns</span>=<span class="string">"http://www.w3.org/2000/svg"</span> &gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">rect</span>   <span class="attr">height</span>=<span class="string">"200"</span> <span class="attr">width</span>=<span class="string">"200"</span> /&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">text</span> <span class="attr">x</span>=<span class="string">"90px"</span> <span class="attr">y</span>=<span class="string">"110px"</span> <span class="attr">fill</span>=<span class="string">"red"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">                <span class="tag">&lt;/<span class="name">svg</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">svg</span>   <span class="attr">id</span>=<span class="string">"cubic3"</span> <span class="attr">xmlns</span>=<span class="string">"http://www.w3.org/2000/svg"</span> &gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">rect</span>   <span class="attr">height</span>=<span class="string">"200"</span> <span class="attr">width</span>=<span class="string">"200"</span> /&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">text</span> <span class="attr">x</span>=<span class="string">"90px"</span> <span class="attr">y</span>=<span class="string">"110px"</span> <span class="attr">fill</span>=<span class="string">"red"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">                <span class="tag">&lt;/<span class="name">svg</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">svg</span>   <span class="attr">id</span>=<span class="string">"cubic4"</span> <span class="attr">xmlns</span>=<span class="string">"http://www.w3.org/2000/svg"</span> &gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">rect</span>   <span class="attr">height</span>=<span class="string">"200"</span> <span class="attr">width</span>=<span class="string">"200"</span> /&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">text</span> <span class="attr">x</span>=<span class="string">"90px"</span> <span class="attr">y</span>=<span class="string">"110px"</span> <span class="attr">fill</span>=<span class="string">"red"</span>&gt;</span>4<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">                <span class="tag">&lt;/<span class="name">svg</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">svg</span>   <span class="attr">id</span>=<span class="string">"cubic5"</span> <span class="attr">xmlns</span>=<span class="string">"http://www.w3.org/2000/svg"</span> &gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">rect</span>   <span class="attr">height</span>=<span class="string">"200"</span> <span class="attr">width</span>=<span class="string">"200"</span> /&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">text</span> <span class="attr">x</span>=<span class="string">"90px"</span> <span class="attr">y</span>=<span class="string">"110px"</span> <span class="attr">fill</span>=<span class="string">"red"</span>&gt;</span>5<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">                <span class="tag">&lt;/<span class="name">svg</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">svg</span>   <span class="attr">id</span>=<span class="string">"cubic6"</span> <span class="attr">xmlns</span>=<span class="string">"http://www.w3.org/2000/svg"</span> &gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">rect</span>   <span class="attr">height</span>=<span class="string">"200"</span> <span class="attr">width</span>=<span class="string">"200"</span> /&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">text</span> <span class="attr">x</span>=<span class="string">"90px"</span> <span class="attr">y</span>=<span class="string">"110px"</span> <span class="attr">fill</span>=<span class="string">"red"</span>&gt;</span>6<span class="tag">&lt;/<span class="name">text</span>&gt;</span></div><div class="line">                <span class="tag">&lt;/<span class="name">svg</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">```   </div><div class="line">这里使用了SVG正好也可以了解一下SVG的初步使用方法。</div><div class="line">### 2. 初始样式</div><div class="line">```css</div><div class="line">    .stage &#123;width: 800px; height: 600px; background:#e5fffb; perspective:1000px;&#125;</div><div class="line">    .content&#123;transform-style: preserve-3d;width: 100%;height: 100%;animation: clockwise 5s linear infinite&#125;</div><div class="line">    #cubic1&#123;fill:#2ADF8A;&#125;</div><div class="line">    #cubic2&#123;fill:#61BFBE;&#125;</div><div class="line">    #cubic3&#123;fill:#BADDD6;&#125;</div><div class="line">    #cubic4&#123;fill:#FFB5BA;&#125;</div><div class="line">    #cubic5&#123;fill:#866667;&#125;</div><div class="line">    #cubic6&#123;fill:#8BD15C;&#125;</div><div class="line">    SVG &#123;position: absolute;top:200px; left:300px;width:200px; height:200px;&#125;</div><div class="line">    text&#123;font-size: 60px;&#125;</div></pre></td></tr></table></figure>
+<p>这里很容易看懂就是把6个面都叠加到了stage中间。需要注意的是perspective表示观察点到z=0平面的距离。三维元素在观察者后面的部分不会绘制出来，即z轴坐标值大于perspective属性值的部分。另外可以简单的理解perspective-origin，表示观察者的位置。默认值50%，50%表示正前方。<br><strong>perspective-origin默认的情况</strong><br><img src="http://wx3.sinaimg.cn/mw690/005NdwvWly1fk0i1aenjfj30rk0kuglv.jpg" alt="默认情况" title="默认情况"><br><strong>perspective-origin:0 ,0 的情况</strong><br><img src="http://wx2.sinaimg.cn/mw690/005NdwvWly1fk0i2ewlu6j30rn0l3wex.jpg" alt="0%，0%的情况" title="0%，0%的情况"><br>就像是从左上方观察一个立方体，需要注意的是perspective:观察者据z=0平面的距离和perspective-origin观察的位置将共同决定物体被观察到的具体形状。</p>
+<h3 id="3-形成正方体"><a href="#3-形成正方体" class="headerlink" title="3. 形成正方体"></a>3. 形成正方体</h3><p>讲完了perspective-origin和perspective，下面就来讲如何形成一个立方体的形状。以第3面为例，这里是最上面那一面。<br><code>#cubic3{fill:#BADDD6;transform: rotateX(90deg) translateZ(100px);}</code><br>首先沿X轴旋转90度（逆时针），需要注意的是，旋转后物体的坐标轴是同时跟着旋转的，所以这时原本Z轴平行屏幕向上，translateZ(100px)向Z轴上方平移100px，到达指定位置。<br>其他同理<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">    <span class="selector-id">#cubic1</span>&#123;<span class="attribute">fill</span>:<span class="number">#2ADF8A</span>;<span class="attribute">transform</span>: <span class="built_in">translateZ</span>(100px);&#125;</div><div class="line">    <span class="selector-id">#cubic2</span>&#123;<span class="attribute">fill</span>:<span class="number">#61BFBE</span>;<span class="attribute">transform</span>:<span class="built_in">rotateY</span>(180deg) <span class="built_in">translateZ</span>(100px)&#125;</div><div class="line">    <span class="selector-id">#cubic3</span>&#123;<span class="attribute">fill</span>:<span class="number">#BADDD6</span>;<span class="attribute">transform</span>: <span class="built_in">rotateX</span>(90deg) <span class="built_in">translateZ</span>(100px);&#125;</div><div class="line">    <span class="selector-id">#cubic4</span>&#123;<span class="attribute">fill</span>:<span class="number">#FFB5BA</span>;<span class="attribute">transform</span>: <span class="built_in">rotateX</span>(270deg) <span class="built_in">translateZ</span>(100px);&#125;</div><div class="line">    <span class="selector-id">#cubic5</span>&#123;<span class="attribute">fill</span>:<span class="number">#866667</span>;<span class="attribute">transform</span>: <span class="built_in">rotateY</span>(270deg) <span class="built_in">translateZ</span>(100px);&#125;</div><div class="line">    <span class="selector-id">#cubic6</span>&#123;<span class="attribute">fill</span>:<span class="number">#8BD15C</span>;<span class="attribute">transform</span>: <span class="built_in">rotateY</span>(90deg) <span class="built_in">translateZ</span>(100px);&#125;</div><div class="line">```   </div><div class="line">这是一个立方体就形成了，见第一张图。然后再加一点动画就大功搞成。</div><div class="line">### 4. 添加旋转动画</div><div class="line">```<span class="selector-tag">css</span></div><div class="line"> @<span class="keyword">keyframes</span> clockwise&#123;</div><div class="line">        <span class="selector-tag">to</span>&#123;<span class="attribute">transform</span>: <span class="built_in">rotateY</span>(-360deg)&#125;</div><div class="line">    &#125;</div><div class="line"> <span class="selector-class">.content</span>&#123;<span class="attribute">transform-style</span>: preserve-<span class="number">3</span>d;<span class="attribute">width</span>: <span class="number">100%</span>;<span class="attribute">height</span>: <span class="number">100%</span>;<span class="attribute">animation</span>: clockwise <span class="number">5s</span> linear infinite&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="http://wx2.sinaimg.cn/mw690/005NdwvWly1fk0j3e7n8ag30rl0k0tgx.gif" alt=""></p>
+<p>至此就全部结束啦。</p>
+
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
