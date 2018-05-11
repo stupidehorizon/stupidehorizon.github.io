@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      React ref 指北教程 | HORIZON 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="horizon">
+    
+    
+
+    <meta name="description" content="React，Vue 等前端框架的出现之前 Web 页面交互完全依靠频繁的 Dom 操作实现，在那个刀耕火种的年代 Jquery 作为一个便捷的实现 Dom 操作的库便走上了神坛，成为了 Web 开发工程师必备技能。幸运的是 Web 2.0 时代，React 和 Vue 等前端框架利用组件状态管理避免了频繁的直接的 Dom 操作，增加了代码可读性。但 React 依然为我们提供了便捷的获取 Dom">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React ref 指北教程 | HORIZON">
+<meta property="og:url" content="http://yoursite.com/2018/03/10/React-ref-指北教程/index.html">
+<meta property="og:site_name" content="HORIZON">
+<meta property="og:description" content="React，Vue 等前端框架的出现之前 Web 页面交互完全依靠频繁的 Dom 操作实现，在那个刀耕火种的年代 Jquery 作为一个便捷的实现 Dom 操作的库便走上了神坛，成为了 Web 开发工程师必备技能。幸运的是 Web 2.0 时代，React 和 Vue 等前端框架利用组件状态管理避免了频繁的直接的 Dom 操作，增加了代码可读性。但 React 依然为我们提供了便捷的获取 Dom">
+<meta property="og:image" content="http://yoursite.com/img/react-ref-header.jpeg">
+<meta property="og:updated_time" content="2018-05-11T15:37:23.023Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React ref 指北教程 | HORIZON">
+<meta name="twitter:description" content="React，Vue 等前端框架的出现之前 Web 页面交互完全依靠频繁的 Dom 操作实现，在那个刀耕火种的年代 Jquery 作为一个便捷的实现 Dom 操作的库便走上了神坛，成为了 Web 开发工程师必备技能。幸运的是 Web 2.0 时代，React 和 Vue 等前端框架利用组件状态管理避免了频繁的直接的 Dom 操作，增加了代码可读性。但 React 依然为我们提供了便捷的获取 Dom">
+<meta name="twitter:image" content="http://yoursite.com/img/react-ref-header.jpeg">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">HORIZON</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          只要你一句话，我愿陪你走天涯
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">React ref 指北教程</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2018-03-10" class="post-meta__date date">2018-03-10</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/javascript/">javascript</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p><img src="/img/react-ref-header.jpeg" alt="React ref 指北教程"></p>
+<p>React，Vue 等前端框架的出现之前 Web 页面交互完全依靠频繁的 Dom 操作实现，在那个刀耕火种的年代 Jquery 作为一个便捷的实现 Dom 操作的库便走上了神坛，成为了 Web 开发工程师必备技能。幸运的是 Web 2.0 时代，React 和 Vue 等前端框架利用组件状态管理避免了频繁的直接的 Dom 操作，增加了代码可读性。但 React 依然为我们提供了便捷的获取 Dom 的方法。在 React 典型的数据流里，props 是父组件控制子组件唯一的方式，要去修改一个子组件，我们通过改变 props 来使子组件重新渲染。但是在有一些场景中我们可以直接更改子组件而不通过常规的数据流，React ref 就是在这种情况下的解决方案。</p>
+<h2 id="我们什么时候需要使用它？"><a href="#我们什么时候需要使用它？" class="headerlink" title="我们什么时候需要使用它？"></a>我们什么时候需要使用它？</h2><blockquote>
+<p>根据官方文档的定义有三种情况我们可能使用到它</p>
+</blockquote>
+<ol>
+<li>管理焦点，文本选择，或媒体播放。</li>
+<li>触发命令动画。</li>
+<li>与第三方 DOM 库集成。</li>
+</ol>
+<p>话不多少，我们首先来回顾一下，React 中几种 ref 使用的方式。</p>
+<h2 id="1-字符串定义"><a href="#1-字符串定义" class="headerlink" title="1. 字符串定义"></a>1. 字符串定义</h2><blockquote>
+<p>这个方案已经不被 react 官方推荐，而且会在未来的版本中移除。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 在 render 函数里面</span></div><div class="line">&lt;input type=<span class="string">"text"</span> defaultValue=<span class="string">"First"</span> ref=<span class="string">"first"</span> /&gt;;</div><div class="line"></div><div class="line"><span class="comment">// 获取 ref</span></div><div class="line"><span class="keyword">this</span>.refs.first;</div></pre></td></tr></table></figure>
+<h2 id="2-使用回调函数"><a href="#2-使用回调函数" class="headerlink" title="2. 使用回调函数"></a>2. 使用回调函数</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 在 render 函数里面</span></div><div class="line">&lt;input</div><div class="line">  type=<span class="string">"text"</span></div><div class="line">  defaultValue=<span class="string">"Second"</span></div><div class="line">  ref=&#123;input =&gt; (<span class="keyword">this</span>.second = input)&#125;</div><div class="line">/&gt;;</div><div class="line"></div><div class="line"><span class="comment">// 获取 ref</span></div><div class="line"><span class="keyword">this</span>.second;</div></pre></td></tr></table></figure>
+<h2 id="3-使用-React-createRef"><a href="#3-使用-React-createRef" class="headerlink" title="3. 使用 React.createRef()"></a>3. 使用 React.createRef()</h2><blockquote>
+<p>在 react 16.3 中，您将能够使用新的 React.createref() 函数使 ref 创建变得更容易。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 在 class 中声明</span></div><div class="line">third = React.createRef();</div><div class="line"><span class="comment">// 或者在 constructor 中声明</span></div><div class="line"><span class="keyword">this</span>.third = React.createRef();</div><div class="line"></div><div class="line"><span class="comment">// 在 render 函数中:</span></div><div class="line">&lt;input type=<span class="string">"text"</span> defaultValue=<span class="string">"Third"</span> ref=&#123;<span class="keyword">this</span>.third&#125; /&gt;;</div><div class="line"></div><div class="line"><span class="comment">// 获取 ref</span></div><div class="line"><span class="keyword">this</span>.third.current;</div><div class="line"></div><div class="line"><span class="comment">// 获取 input 的 value </span></div><div class="line"><span class="keyword">this</span>.third.current.value;</div></pre></td></tr></table></figure>
+<p>注意：我在 react@16.3.0-alpha.2 中使用 this.third.current 取到了值，但是这个 api 目前还不稳定，有的版本是通过 this.third.value 取到 dom 的引用。</p>
+<h2 id="如何在-HOC-中传递-ref-？"><a href="#如何在-HOC-中传递-ref-？" class="headerlink" title="如何在 HOC 中传递 ref ？"></a>如何在 HOC 中传递 ref ？</h2><h3 id="首先我们先试一下在-HOC-中传递-ref"><a href="#首先我们先试一下在-HOC-中传递-ref" class="headerlink" title="首先我们先试一下在 HOC 中传递 ref"></a>首先我们先试一下在 HOC 中传递 ref</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> PropTypes <span class="keyword">from</span> <span class="string">"prop-types"</span>;</div><div class="line"><span class="keyword">import</span> logo <span class="keyword">from</span> <span class="string">'./logo.svg'</span>;</div><div class="line"><span class="keyword">import</span> <span class="string">'./App.css'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">FormSection</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">  <span class="keyword">static</span> propTypes = &#123;</div><div class="line">    <span class="attr">fourth</span>: PropTypes.shape(&#123; <span class="attr">value</span>: PropTypes.instanceOf(HTMLInputElement) &#125;)</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> &lt;input type="text" defaultValue="hoc" ref=&#123;this.props.ref&#125; /&gt;;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// HOC 工厂函数</div><div class="line">function HOCFactory(WrappedComponent) &#123;</div><div class="line">  return class HOC extends Component &#123;</div><div class="line">    render() &#123;</div><div class="line">      return &lt;WrappedComponent &#123;...this.props&#125;/&gt;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">class App extends Component &#123;</div><div class="line"></div><div class="line">  handleSubmit = e =&gt; &#123;</div><div class="line">    e.preventDefault();</div><div class="line">    console.log(this.refs.hoc);</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    const HOCInstance = HOCFactory(FormSection);</div><div class="line">    return (</div><div class="line">      &lt;form onSubmit=&#123;e =&gt; this.handleSubmit(e)&#125;&gt;</div><div class="line">        &lt;HOCInstance ref="hoc" /&gt;</div><div class="line">        &lt;button&gt;Submit&lt;/button&gt;</div><div class="line">      &lt;/form&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">export default App;</div></pre></td></tr></table></figure>
+<p>提交后 ref 并没有绑定到我们想要的组件上，而是被指向了 HOC 这个组件，其实如果我们了解 HOC 的原理的话，这个问题我们应该很清楚就明白了。React ref 是一个特殊的属性，它会在在组件 componentDidMount 和 componentDidUpdate 之前被触发。也就是说 ref 是不能作为 props 传递的，因为它会在组件一加载时就会触发回调函数。</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>使用 React.createRef() 在 HOC 组件中绕开 ref 属性。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">class FormSection extends Component &#123;</div><div class="line">    ...</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> &lt;input type="text" defaultValue="hoc" ref=&#123;this.props.myRef&#125; /&gt;;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function HOCFactory(WrappedComponent) &#123;</div><div class="line">...</div><div class="line">&#125;</div><div class="line"></div><div class="line">class App extends Component &#123;</div><div class="line"></div><div class="line">  hocRef = React.createRef();</div><div class="line"></div><div class="line">  handleSubmit = e =&gt; &#123;</div><div class="line">    e.preventDefault();</div><div class="line">    console.log(this.hocRef);</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    const HOCInstance = HOCFactory(FormSection);</div><div class="line">    return (</div><div class="line">      &lt;form onSubmit=&#123;e =&gt; this.handleSubmit(e)&#125;&gt;</div><div class="line">        &#123;/* 通过在父组件中使用自定义的属性，从而使得属性能够传递下去。如果使用 ref 属性，将在父组件加载时就会触发回调，导致 this.hocRef 指向父组件*/&#125;</div><div class="line">        &lt;HOCInstance myRef=&#123;this.hocRef&#125; /&gt;</div><div class="line">        &lt;button&gt;Submit&lt;/button&gt;</div><div class="line">      &lt;/form&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>同理我们在现有的 React 版本(@16.2.0以下)里，也可以通过回调函数在父组件中绕开 ref 属性的方式获取子组件的实例。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">class FormSection extends Component &#123;</div><div class="line">    ...</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> &lt;input type="text" defaultValue="hoc" ref=&#123;this.props.myRef&#125; /&gt;;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function HOCFactory(WrappedComponent) &#123;</div><div class="line">...</div><div class="line">&#125;</div><div class="line"></div><div class="line">class App extends Component &#123;</div><div class="line"></div><div class="line">  handleSubmit = e =&gt; &#123;</div><div class="line">    e.preventDefault();</div><div class="line">    console.log(this.hocRef);</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    const HOCInstance = HOCFactory(FormSection);</div><div class="line">    return (</div><div class="line">      &lt;form onSubmit=&#123;e =&gt; this.handleSubmit(e)&#125;&gt;</div><div class="line">        &lt;HOCInstance myRef=&#123;el =&gt; this.hocRef = el&#125; /&gt;</div><div class="line">        &lt;button&gt;Submit&lt;/button&gt;</div><div class="line">      &lt;/form&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><p><a href="https://www.leighhalliday.com/using-refs-in-react" target="_blank" rel="external">Using Refs in React</a></p>
+<p><a href="https://reactjs.org/docs/refs-and-the-dom.html" target="_blank" rel="external">React 官方文档</a></p>
+
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
