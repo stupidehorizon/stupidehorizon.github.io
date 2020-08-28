@@ -8,4 +8,4 @@ module.exports="#ifdef GL_ES\nprecision highp float;\n#define GLSLIFY 1\n#endif\
 },{}],"dzuj":[function(require,module,exports) {
 "use strict";var e=u(require("gl-renderer")),r=u(require("./vertex.glsl")),t=u(require("./fragment.glsl"));function u(e){return e&&e.__esModule?e:{default:e}}var n=document.querySelector("canvas"),s=new e.default(n),i=s.compileSync(t.default,r.default);s.useProgram(i),s.uniforms.uMouse=[-1,-1],n.addEventListener("mousemove",function(e){var r=e.target.getBoundingClientRect(),t=r.x,u=r.y,n=r.width,i=r.height;s.uniforms.uMouse=[(e.x-t)/n,1-(e.y-u)/i]}),s.setMeshData([{positions:[[-1,-1],[-1,1],[1,1],[1,-1]],attributes:{uv:[[0,0],[0,1],[1,1],[1,0]]},cells:[[0,1,2],[2,0,3]]}]),s.render();
 },{"gl-renderer":"bwuV","./vertex.glsl":"f36V","./fragment.glsl":"HNoZ"}]},{},["dzuj"], null)
-//# sourceMappingURL=/06_search_light.9699bee3.js.map
+//# sourceMappingURL=../06_search_light.9699bee3.js.map
