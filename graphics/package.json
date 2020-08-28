@@ -1,4 +1,10 @@
 {
+  "name": "graphics",
+  "description": "graphics practices",
+  "keywords": ["webgl", "canvas"],
+  "scripts": {
+    "build": "rm -rf demo && node parcel.js"
+  },
   "dependencies": {
     "earcut": "^2.2.2",
     "gl-renderer": "^0.13.6",
