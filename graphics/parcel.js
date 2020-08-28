@@ -4,7 +4,7 @@ const { spawn } = require('child_process');
 const entries = [];
 
 glob("**/*.html", { ignore: ['**/dist/**', 'node_modules/**', ]}, function (er, files) {
-  const build = spawn('parcel', ['build', ...files, '--public-url', '../'], {
+  const build = spawn('parcel', ['build', ...files, '--out-dir', 'demo', '--public-url', '../'], {
     cwd: process.cwd()
   });
 
