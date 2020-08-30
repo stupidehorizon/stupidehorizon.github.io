@@ -16,7 +16,7 @@ renderer.uniforms.projectionMatrix = [
   1, 0, 0,
   0, 1, 0,
   0, 0, -1,
-]
+];
 
 // 光源位置
 const lightPos = {
@@ -24,8 +24,9 @@ const lightPos = {
   y: 0,
   z: 0
 };
+
 renderer.uniforms.lightPos = [lightPos.x, lightPos.y, lightPos.z];
-const setValue = (key) => {
+const setLightPosValue = (key) => {
   return (e) => {
     lightPos[key] = +e.target.value;
     renderer.uniforms.lightPos = [lightPos.x, lightPos.y, lightPos.z];
@@ -34,8 +35,37 @@ const setValue = (key) => {
 document.querySelectorAll('#lightPos input').forEach(element => {
   const key = element.dataset.key;
   element.value = lightPos[key];
-  element.addEventListener('change', setValue(key));
+  element.addEventListener('change', setLightPosValue(key));
 });
+
+
+// 相机位置
+const cameraPos = {
+  x: 0,
+  y: 0,
+  z: 0
+};
+
+const getViewMatrix = () => ([
+  1,0,0,0,
+  0,1,0,0,
+  0,0,1,0,
+  -cameraPos.x,-cameraPos.y,-cameraPos.z,1,
+]);
+
+renderer.uniforms.viewMatrix = getViewMatrix();
+const setCameraPosValue = (key) => {
+  return (e) => {
+    cameraPos[key] = +e.target.value;
+    renderer.uniforms.viewMatrix = getViewMatrix();
+  };
+}
+document.querySelectorAll('#cameraPos input').forEach(element => {
+  const key = element.dataset.key;
+  element.value = cameraPos[key];
+  element.addEventListener('change', setCameraPosValue(key));
+});
+
 
 // 立方体旋转,模型矩阵
 renderer.uniforms.modelMatrix = [
@@ -56,7 +86,7 @@ const updateModelMatrix = () => {
   renderer.uniforms.modelMatrix = modelMatrix;
   requestAnimationFrame(updateModelMatrix);
 }
-updateModelMatrix();
+// updateModelMatrix();
 
 // 创建立方体顶点，颜色，法向量数据
 const boxData = crate3dBox(1);

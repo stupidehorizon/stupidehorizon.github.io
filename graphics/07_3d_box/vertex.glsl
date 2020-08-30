@@ -7,6 +7,7 @@ varying float vCos;
 
 uniform mat3 modelMatrix;
 uniform mat3 projectionMatrix;
+uniform mat4 viewMatrix;
 uniform vec3 lightPos;
 
 void main() {
@@ -15,5 +16,5 @@ void main() {
   vColor = colors;
   vCos = max(dot(normalize(tansMateix * normalVectors), normalize(projectionMatrix * lightPos - pos)), 0.0);
   gl_PointSize = 1.0;
-  gl_Position = vec4(pos, 1);
+  gl_Position = viewMatrix * vec4(pos, 1);
 }
