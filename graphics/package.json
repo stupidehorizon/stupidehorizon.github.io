@@ -1,7 +1,10 @@
 {
   "name": "graphics",
   "description": "graphics practices",
-  "keywords": ["webgl", "canvas"],
+  "keywords": [
+    "webgl",
+    "canvas"
+  ],
   "scripts": {
     "build": "rm -rf demo && node parcel.js"
   },

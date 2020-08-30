@@ -11,6 +11,13 @@ const renderer = new GlRenderer(canvas, {
 const program = renderer.compileSync(fragment, vertex);
 renderer.useProgram(program);
 
+// 投影矩阵
+renderer.uniforms.projectionMatrix = [
+  1, 0, 0,
+  0, 1, 0,
+  0, 0, -1,
+]
+
 // 光源位置
 const lightPos = {
   x: 10,
@@ -30,9 +37,8 @@ document.querySelectorAll('#lightPos input').forEach(element => {
   element.addEventListener('change', setValue(key));
 });
 
-// 立方体旋转
-
-renderer.uniforms.rotationsMatrix = [
+// 立方体旋转,模型矩阵
+renderer.uniforms.modelMatrix = [
   1,0,0,
   0,1,0,
   0,0,1
@@ -42,15 +48,15 @@ let angleX = 0;
 let angleY = 0;
 let angleZ = 0;
 
-const updateRotationsMatrix = () => {
-  angleX+=0.003;
-  angleY+=0.003;
-  angleZ+=0.003;
-  const rotationsMatrix = createRotationsMatrix(angleX, angleY, angleZ);
-  renderer.uniforms.rotationsMatrix = rotationsMatrix;
-  requestAnimationFrame(updateRotationsMatrix);
+const updateModelMatrix = () => {
+  angleX+=0.006;
+  angleY+=0.006;
+  angleZ+=0.006;
+  const modelMatrix = createRotationsMatrix(angleX, angleY, angleZ);
+  renderer.uniforms.modelMatrix = modelMatrix;
+  requestAnimationFrame(updateModelMatrix);
 }
-requestAnimationFrame(updateRotationsMatrix);
+updateModelMatrix();
 
 // 创建立方体顶点，颜色，法向量数据
 const boxData = crate3dBox(1);
