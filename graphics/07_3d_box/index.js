@@ -53,6 +53,7 @@ const getViewMatrix = () => {
     0, 0, 1, 0,
     0, 0, 0, 1);
   m.lookAt(eye, target, up).inverse();
+  // 需要注意的是，这个矩阵是基于左手系进行变换的，所以要在逆转 Z 轴前使用
   return m;
 };
 
@@ -70,26 +71,43 @@ document.querySelectorAll("#cameraPos input").forEach((element) => {
 });
 
 // 立方体旋转,模型矩阵
-renderer.uniforms.modelMatrix = [1, 0, 0, 0, 1, 0, 0, 0, 1];
+let startRotate = false;
+renderer.uniforms.modelMatrix = [
+  1,0,0,
+  0,1,0,
+  0,0,1
+];
 
 let angleX = 0;
 let angleY = 0;
 let angleZ = 0;
 
 const updateModelMatrix = () => {
-  angleX += 0.006;
-  angleY += 0.006;
-  angleZ += 0.006;
+  if(!startRotate) {
+    return;
+  }
+  angleX+=0.006;
+  angleY+=0.006;
+  angleZ+=0.006;
   const modelMatrix = createRotationsMatrix(angleX, angleY, angleZ);
   renderer.uniforms.modelMatrix = modelMatrix;
   requestAnimationFrame(updateModelMatrix);
-};
+}
 updateModelMatrix();
+document.querySelector('#startRotate').addEventListener('click', () => {
+  if(startRotate == false) {
+    startRotate = true;
+    updateModelMatrix();
+  }
+}, false);
+document.querySelector('#stopRotate').addEventListener('click', () => {
+  startRotate = false;
+}, false);
 
 // 创建立方体顶点，颜色，法向量数据
 // 颜色
 // 后：红；右：绿；前：蓝；左：红；上：绿；下：蓝；
-const boxData = crate3dBox(0.5, [[0.8,0,0], [0,0.8,0], [0,0,0.8], [0.8,0,0], [0,0.8,0], [0,0,0.8]]);
+const boxData = crate3dBox(0.5);
 renderer.setMeshData([
   {
     positions: boxData.positions,
