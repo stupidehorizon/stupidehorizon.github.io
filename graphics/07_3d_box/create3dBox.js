@@ -1,5 +1,11 @@
 import { subtract, cross, normalize } from '../common/lib/math/functions/Vec3Func';
 
+/**
+ * create 3d box data: {positions, colors, cells, normalVectors};
+ *
+ * @param {number} size the receiving matrix
+ * @param {array} colors of the surfaces, 后，右，前，左，上，下
+ */
 const create3dBox = (size, surfaceColors = [[0.1,0,0], [0.1,0,0], [0.1,0,0], [0.1,0,0], [0.1,0,0], [0.1,0,0]]) => {
   const h = size/2;
   const p = [
