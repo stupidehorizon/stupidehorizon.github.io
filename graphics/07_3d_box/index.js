@@ -13,7 +13,12 @@ const program = renderer.compileSync(fragment, vertex);
 renderer.useProgram(program);
 
 // 投影矩阵
-renderer.uniforms.projectionMatrix = [1, 0, 0, 0, 1, 0, 0, 0, -1];
+renderer.uniforms.projectionMatrix = [
+  1, 0, 0, 0,
+  0, 1, 0, 0,
+  0, 0, -1, 0,
+  0, 0, 0, 1
+];
 
 // 光源位置
 const lightPos = {
@@ -51,7 +56,8 @@ const getViewMatrix = () => {
     1, 0, 0, 0,
     0, 1, 0, 0,
     0, 0, 1, 0,
-    0, 0, 0, 1);
+    0, 0, 0, 1
+  );
   m.lookAt(eye, target, up).inverse();
   // 需要注意的是，这个矩阵是基于左手系进行变换的，所以要在逆转 Z 轴前使用
   return m;
@@ -71,11 +77,12 @@ document.querySelectorAll("#cameraPos input").forEach((element) => {
 });
 
 // 立方体旋转,模型矩阵
-let startRotate = true;
+let startRotate = false;
 renderer.uniforms.modelMatrix = [
-  1,0,0,
-  0,1,0,
-  0,0,1
+  1, 0, 0, 0,
+  0, 1, 0, 0,
+  0, 0, 1, 0,
+  0, 0, 0, 1
 ];
 
 let angleX = 0;
@@ -83,19 +90,19 @@ let angleY = 0;
 let angleZ = 0;
 
 const updateModelMatrix = () => {
-  if(!startRotate) {
+  if (!startRotate) {
     return;
   }
-  angleX+=0.006;
-  angleY+=0.006;
-  angleZ+=0.006;
+  angleX += 0.006;
+  angleY += 0.006;
+  angleZ += 0.006;
   const modelMatrix = createRotationsMatrix(angleX, angleY, angleZ);
   renderer.uniforms.modelMatrix = modelMatrix;
   requestAnimationFrame(updateModelMatrix);
 }
 updateModelMatrix();
 document.querySelector('#startRotate').addEventListener('click', () => {
-  if(startRotate == false) {
+  if (startRotate == false) {
     startRotate = true;
     updateModelMatrix();
   }
