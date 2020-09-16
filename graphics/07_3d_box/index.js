@@ -77,7 +77,7 @@ document.querySelectorAll("#cameraPos input").forEach((element) => {
 });
 
 // 立方体旋转,模型矩阵
-let startRotate = false;
+let startRotate = true;
 renderer.uniforms.modelMatrix = [
   1, 0, 0, 0,
   0, 1, 0, 0,
